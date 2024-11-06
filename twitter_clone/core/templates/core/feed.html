@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Feed</title></head>
+<body>
+    <h1>Bem-vindo ao Twitter Clone</h1>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="content" placeholder="O que está acontecendo?"></textarea>
+            <button type="submit">Tweetar</button>
+        </form>
+    </div>
+    <div>
+        <h2>Feed</h2>
+        {% for tweet in tweets %}
+            <p><strong>{{ tweet.user.username }}</strong>: {{ tweet.content }}</p>
+        {% endfor %}
+    </div>
+    <div>
+        <h2>Links</h2>
+        <ul>
+            <li><a href="#">Notificações</a></li>
+            <li><a href="#">Seguindo</a></li>
+            <li><a href="#">Seguidores</a></li>
+            <li><a href="#">Perfil</a></li>
+        </ul>
+    </div>
+</body>
+</html>
