@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
-from .models import Tweet
+from .models import Tweet, User
 from .serializers import UserSerializer, TweetSerializer
 
 
@@ -26,13 +26,13 @@ class LoginView(APIView):
         return render(request, 'core/login.html')
 
     def post(self, request):
-        username = request.data.get('username')
-        password = request.data.get('password')
+        username = request.POST.get('username')  # Usando POST ao invés de request.data
+        password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('feed')
-        return Response({'error': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
+            return redirect('feed')  # Redireciona para a página de feed
+        return render(request, 'core/login.html', {'error': 'Credenciais inválidas'})
 
 
 @login_required
@@ -42,4 +42,3 @@ def feed(request):
         Tweet.objects.create(user=request.user, content=content)
     tweets = Tweet.objects.all().order_by('-created_at')
     return render(request, 'core/feed.html', {'tweets': tweets})
-

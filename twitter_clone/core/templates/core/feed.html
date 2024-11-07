@@ -1,29 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head><title>Feed</title></head>
-<body>
-    <h1>Bem-vindo ao Twitter Clone</h1>
-    <div>
-        <form method="post">
-            {% csrf_token %}
-            <textarea name="content" placeholder="O que está acontecendo?"></textarea>
-            <button type="submit">Tweetar</button>
-        </form>
-    </div>
-    <div>
-        <h2>Feed</h2>
-        {% for tweet in tweets %}
-            <p><strong>{{ tweet.user.username }}</strong>: {{ tweet.content }}</p>
-        {% endfor %}
-    </div>
-    <div>
-        <h2>Links</h2>
-        <ul>
-            <li><a href="#">Notificações</a></li>
-            <li><a href="#">Seguindo</a></li>
-            <li><a href="#">Seguidores</a></li>
-            <li><a href="#">Perfil</a></li>
-        </ul>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Twitter Clone</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'core/css/feed.css' %}">
+    </head>
+    <body>
+        <div class="feed-container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Área de Perfil -->
+                <div class="profile-section">
+                        <img src="{% static 'default_profile_image.jpg' %}" alt="Foto do perfil" class="profile-pic">
+                    <p class="username">{{ user.username }}</p>
+                </div>
+    
+                <!-- Links da Sidebar -->
+                <h2>Links</h2>
+                <ul>
+                    <li><a href="#">Notificações</a></li>
+                    <li><a href="#">Seguindo</a></li>
+                    <li><a href="#">Seguidores</a></li>
+                    <li><a href="#">Perfil</a></li>
+                </ul>
+            </div>
+    
+            <!-- Conteúdo do Feed -->
+            <div class="feed-content">
+                <h1>Bem-vindo ao Twitter Clone</h1>
+                
+                <!-- Caixa de Tweet -->
+                <div class="tweet-box">
+                    <form method="post">
+                        {% csrf_token %}
+                        <textarea name="content" placeholder="O que está acontecendo?"></textarea>
+                        <button type="submit">Tweetar</button>
+                    </form>
+                </div>
+    
+                <!-- Lista de Tweets -->
+                <div>
+                    <h2>Feed</h2>
+                    {% for tweet in tweets %}
+                        <div class="tweet">
+                            <div class="tweet-content">
+                                <div class="tweet-header">
+                                    <strong>{{ tweet.user.username }}</strong>
+                                </div>
+                                <p>{{ tweet.content }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    <script src="{% static 'core/js/script.js' %}"></script>
 </body>
 </html>

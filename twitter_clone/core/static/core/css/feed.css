@@ -1,0 +1,156 @@
+
+
+/* Paleta de Cores */
+.primary-color {
+    color: #FEA47F;
+}
+
+.secondary-color {
+    color: #F97F51;
+}
+
+.accent-color {
+    color: #B33771;
+}
+
+.dark-color {
+    color: #6D214F;
+}
+
+
+
+/* Feed */
+.feed-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100vh;
+    background-color: #F5F8FA;
+}
+
+/* Menu Lateral Esquerdo */
+.sidebar {
+    position: fixed; /* Fixar no lado esquerdo */
+    left: 0;
+    top: 0;
+    width: 20%; /* Ocupar 30% da largura da página */
+    height: 100vh; /* Ocupa toda a altura da viewport */
+    background-color: #FAD4D4; /* Cor de fundo suave */
+    padding: 20px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    color: #6D214F; /* Cor do texto */
+}
+
+.sidebar a {
+    display: block;
+    margin-bottom: 15px;
+    color: #6D214F;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste da área de conteúdo para compensar a sidebar */
+.feed-content {
+    margin-left: 20%; /* Deixa espaço para a sidebar */
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.tweet-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.tweet-box textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    resize: none;
+}
+
+.tweet-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FEA47F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.tweet-box button:hover {
+    background-color: #F97F51;
+}
+
+/* Foto do Usuário */
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+/* Tweets */
+.tweet {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tweet-content {
+    flex-grow: 1;
+}
+
+.tweet-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tweet-header strong {
+    margin-right: 10px;
+}
+
+.tweet-footer {
+    text-align: right;
+    font-size: 14px;
+    color: #B33771;
+}
+
+/* Área de Perfil na Sidebar */
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-section .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.profile-section .username {
+    font-size: 18px;
+    font-weight: bold;
+    color: #6D214F;
+}

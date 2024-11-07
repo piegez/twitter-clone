@@ -1,0 +1,78 @@
+/* Paleta de Cores */
+.primary-color {
+    color: #FEA47F;
+}
+
+.secondary-color {
+    color: #F97F51;
+}
+
+.accent-color {
+    color: #B33771;
+}
+
+.dark-color {
+    color: #6D214F;
+}
+
+/* Página de Login e Cadastro */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #FEA47F;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FEA47F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+button:hover {
+    background-color: #F97F51;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #6D214F;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

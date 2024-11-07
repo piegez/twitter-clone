@@ -15,7 +15,6 @@ class User(AbstractUser):
         blank=True
     )
 
-
 class Tweet(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='tweets')
     content = models.TextField(max_length=280)
@@ -23,4 +22,3 @@ class Tweet(models.Model):
 
     def __str__(self):
         return f'{self.user.username}: {self.content[:20]}...'
-
