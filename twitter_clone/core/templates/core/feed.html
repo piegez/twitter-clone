@@ -7,32 +7,27 @@
         {% load static %}
         <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
         <link rel="stylesheet" href="{% static 'core/css/feed.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     </head>
     <body>
         <div class="feed-container">
-            <!-- Sidebar -->
             <div class="sidebar">
-                <!-- Área de Perfil -->
                 <div class="profile-section">
-                        <img src="{% static 'default_profile_image.jpg' %}" alt="Foto do perfil" class="profile-pic">
+                    <img src="https://via.placeholder.com/200" alt="Foto do perfil" class="profile-pic">
                     <p class="username">{{ user.username }}</p>
                 </div>
-    
-                <!-- Links da Sidebar -->
-                <h2>Links</h2>
-                <ul>
-                    <li><a href="#">Notificações</a></li>
-                    <li><a href="#">Seguindo</a></li>
-                    <li><a href="#">Seguidores</a></li>
-                    <li><a href="#">Perfil</a></li>
-                </ul>
+            
+                <h2>MENU</h2>
+                <a href="#"><i class="bi bi-house"></i> Início</a>
+                <a href="#"><i class="bi bi-person"></i> Perfil</a>
+                <a href="#"><i class="bi bi-envelope"></i> Mensagens</a>
+                <a href="#"><i class="bi bi-gear"></i> Configurações</a>
+                <a href="#"><i class="bi bi-door-closed"></i> Sair</a>
             </div>
     
-            <!-- Conteúdo do Feed -->
             <div class="feed-content">
-                <h1>Bem-vindo ao Twitter Clone</h1>
+                <h1>Bem-vindo ao NOWON</h1>
                 
-                <!-- Caixa de Tweet -->
                 <div class="tweet-box">
                     <form method="post">
                         {% csrf_token %}
@@ -41,7 +36,6 @@
                     </form>
                 </div>
     
-                <!-- Lista de Tweets -->
                 <div>
                     <h2>Feed</h2>
                     {% for tweet in tweets %}

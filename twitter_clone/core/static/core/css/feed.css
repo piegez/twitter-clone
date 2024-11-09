@@ -1,63 +1,80 @@
-
-
-/* Paleta de Cores */
-.primary-color {
-    color: #FEA47F;
-}
-
-.secondary-color {
-    color: #F97F51;
-}
-
-.accent-color {
-    color: #B33771;
-}
-
-.dark-color {
-    color: #6D214F;
-}
-
-
-
-/* Feed */
 .feed-container {
     display: flex;
     justify-content: flex-start;
     width: 100%;
     height: 100vh;
-    background-color: #F5F8FA;
+    background-color: #fff;
 }
 
-/* Menu Lateral Esquerdo */
 .sidebar {
-    position: fixed; /* Fixar no lado esquerdo */
+    position: fixed;
     left: 0;
     top: 0;
-    width: 20%; /* Ocupar 30% da largura da página */
-    height: 100vh; /* Ocupa toda a altura da viewport */
-    background-color: #FAD4D4; /* Cor de fundo suave */
-    padding: 20px;
-    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
-    color: #6D214F; /* Cor do texto */
+    width: 250px;
+    height: 100vh;
+    background-color: #2C3A47;
+    padding: 30px 20px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.profile-section .profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.profile-section .username {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
 }
 
 .sidebar a {
-    display: block;
-    margin-bottom: 15px;
-    color: #6D214F;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 12px;
+    color: #FEA47F;
     font-size: 16px;
+    font-weight: 500;
     text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar a i {
+    font-size: 20px;
 }
 
 .sidebar a:hover {
-    text-decoration: underline;
+    background-color: #FEA47F;
+    color: #2C3A47;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Ajuste da área de conteúdo para compensar a sidebar */
 .feed-content {
-    margin-left: 20%; /* Deixa espaço para a sidebar */
+    margin-left: 250px;
     flex-grow: 1;
     padding: 20px;
+    background-color: #F0F2F5;
 }
 
 .tweet-box {
@@ -94,7 +111,6 @@
     background-color: #F97F51;
 }
 
-/* Foto do Usuário */
 .profile-pic {
     width: 50px;
     height: 50px;
@@ -103,7 +119,6 @@
     margin-right: 15px;
 }
 
-/* Tweets */
 .tweet {
     display: flex;
     align-items: center;
@@ -134,11 +149,12 @@
     color: #B33771;
 }
 
-/* Área de Perfil na Sidebar */
 .profile-section {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .profile-section .profile-pic {
@@ -146,11 +162,11 @@
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 .profile-section .username {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    color: #6D214F;
+    color: white;
 }

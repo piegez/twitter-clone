@@ -5,8 +5,8 @@ from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
-from .models import Tweet, User
-from .serializers import UserSerializer, TweetSerializer
+from .models import Tweet
+from .serializers import UserSerializer
 
 
 class RegisterView(APIView):
@@ -26,12 +26,12 @@ class LoginView(APIView):
         return render(request, 'core/login.html')
 
     def post(self, request):
-        username = request.POST.get('username')  # Usando POST ao invés de request.data
+        username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('feed')  # Redireciona para a página de feed
+            return redirect('feed')
         return render(request, 'core/login.html', {'error': 'Credenciais inválidas'})
 
 
