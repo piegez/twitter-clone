@@ -1,13 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head><title>Cadastro</title></head>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        {% load static %}
+        <link rel="stylesheet" href="../../static/core/css/style.css">
+        <link rel="stylesheet" href="../../static/core/css/login.css">
+    </head>
 <body>
-    <form method="post" action="{% url 'signup' %}">
-        {% csrf_token %}
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit">Cadastrar</button>
-    </form>
-    <a href="{% url 'login' %}">Voltar</a>
+    <div class="login-page">
+        <div class="login-box">
+            <h2>Cadastro</h2>
+            <form method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Usuário">
+                <input type="password" name="password1" placeholder="Senha">
+                <input type="password" name="password2" placeholder="Confirmar Senha">
+                <button type="submit">Cadastrar</button>
+            </form>
+            <a href="{% url 'login' %}">Já tem uma conta? Faça login</a>
+        </div>
+    </div>
+    <script src="../../static/core/js/script.js"></script>
+</body>
 </body>
 </html>

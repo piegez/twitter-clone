@@ -1,4 +1,3 @@
-# core/tests.py
 from django.test import TestCase
 from .models import User, Tweet
 from factory import DjangoModelFactory
