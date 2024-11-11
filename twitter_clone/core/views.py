@@ -14,13 +14,19 @@ class RegisterView(APIView):
         return render(request, 'core/signup.html')
 
     def post(self, request):
-        serializer = UserSerializer(data=request.data)
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        data = {
+            'username': username,
+            'password': password
+        }
+
+        serializer = UserSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return redirect('login')
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
+    
 class LoginView(APIView):
     def get(self, request):
         return render(request, 'core/login.html')

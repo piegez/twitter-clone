@@ -9,5 +9,5 @@ body {
     background-color: #F5F8FA;
     color: #14171A;
     height: 100vh;
-    display: flex;
+    display: block;
 }
